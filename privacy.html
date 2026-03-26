@@ -81,40 +81,51 @@
         strong {
             color: #444;
         }
+        .platform-badge {
+            display: inline-block;
+            background-color: #E8E0F0;
+            color: #6B4EAE;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
 
         <h1>Privacy Policy for Morning Mindful</h1>
-        <p class="last-updated"><strong>Last updated:</strong> March 20, 2026 | <strong>App Version:</strong> 1.0.46</p>
+        <p class="last-updated"><strong>Last updated:</strong> March 21, 2026 | <strong>Platforms:</strong> Android &amp; iOS</p>
 
         <h2>Introduction</h2>
-        <p>Morning Mindful ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+        <p>Morning Mindful ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application on Android or iOS.</p>
 
         <h2>Information We Collect</h2>
 
         <h3>Health and Wellness Data</h3>
-        <p>Morning Mindful is a mental wellness and mindfulness app. The following data may be considered <strong>health-related data</strong> under Google Play's Health Data policies:</p>
+        <p>Morning Mindful is a mental wellness and mindfulness app. The following data may be considered <strong>health-related data</strong>:</p>
         <ul>
             <li><strong>Mood selections:</strong> You may record your mood (e.g., happy, calm, anxious) with each journal entry. This data is stored on your device in an encrypted database and is never transmitted to any server we control.</li>
             <li><strong>Journal entries:</strong> Your written reflections may contain personal thoughts related to your mental health and wellbeing. This content is stored on your device in an encrypted database and is never read, accessed, or collected by us.</li>
             <li><strong>Journaling streaks and habits:</strong> The app tracks how many consecutive days you have journaled. This is stored locally for your personal motivation and is not shared.</li>
         </ul>
 
-        <h3>Optional Google Drive Backup of Health Data</h3>
-        <p>If you choose to enable Google Drive backup, your health and wellness data (including journal entries, mood selections, and photo attachments) is included in the backup. This data is:</p>
+        <h3>Optional Backup of Health Data</h3>
+        <p>Morning Mindful provides backup options to protect your journals. Regardless of the method you choose, your data is always encrypted before leaving your device:</p>
         <ul>
-            <li><strong>Encrypted on your device before upload</strong> using AES-256-GCM with a password only you know</li>
-            <li><strong>Stored in a hidden, app-only folder</strong> in your Google Drive (appdata scope) — not visible in your regular Drive files</li>
-            <li><strong>Unreadable by us or Google</strong> — the encrypted data cannot be decrypted without your backup password</li>
-            <li><strong>Under your full control</strong> — you can disable Drive backup, switch to local-only backup, or delete your Drive data at any time via Google Drive settings (Manage Apps → Morning Mindful → Delete hidden app data)</li>
+            <li><strong>Encrypted on your device before export</strong> using AES-256-GCM with a password only you know</li>
+            <li><strong>Unreadable by us</strong> &mdash; the encrypted data cannot be decrypted without your backup password</li>
+            <li><strong>Under your full control</strong> &mdash; you can delete your backups at any time</li>
         </ul>
-        <p>Google Drive backup is <strong>entirely optional</strong> and disabled by default. You must explicitly opt in and set a backup password during setup.</p>
+        <p><span class="platform-badge">Android</span> You can optionally back up to Google Drive, stored in a hidden, app-only folder (appdata scope). Google Drive backup is entirely optional and disabled by default.</p>
+        <p><span class="platform-badge">iOS</span> You can export encrypted backup files manually and store them wherever you choose.</p>
 
         <div class="highlight">
-            <strong>How we handle your health data:</strong> All health and wellness data is encrypted with AES-256 whether stored on your device or backed up to Google Drive. We never collect, read, transmit, or share your health data. Neither we nor Google can decrypt your backup. You have full control to export or delete your data at any time.
+            <strong>How we handle your health data:</strong> All health and wellness data is encrypted with AES-256 whether stored on your device or backed up. We never collect, read, transmit, or share your health data. You have full control to export or delete your data at any time.
         </div>
 
         <h3>Other Information Stored on Your Device</h3>
@@ -123,11 +134,10 @@
             <li><strong>Photo attachments:</strong> Images you attach to journal entries, stored locally on your device in app-private storage</li>
             <li><strong>App settings:</strong> Your preferences such as blocking duration, word count requirements, morning window times, and selected apps to block</li>
             <li><strong>Usage statistics:</strong> Entry counts, word counts, and streaks (stored locally for your personal tracking)</li>
-            <li><strong>Backup files:</strong> Encrypted backup files (including photos) stored in a local folder you choose, or optionally in your Google Drive (if auto-backup is enabled)</li>
         </ul>
 
         <div class="highlight">
-            <strong>Important:</strong> All data is stored on your device using encrypted storage. If you opt in to Google Drive backup, your data is encrypted on your device before upload — we and Google cannot read your journal entries or personal data.
+            <strong>Important:</strong> All data is stored on your device using encrypted storage. We cannot read your journal entries or personal data.
         </div>
 
         <h3>Information We Do NOT Collect</h3>
@@ -135,14 +145,15 @@
             <li>We do not collect or transmit your journal entries to any server we control</li>
             <li>We do not collect personal identification information</li>
             <li>We do not track your location</li>
-            <li>We do not access your contacts, photos, or other personal files</li>
+            <li>We do not access your contacts or other personal files</li>
             <li>We do not sell or share any data with third parties</li>
         </ul>
 
-        <h2>Permissions We Request</h2>
+        <h2>How App Blocking Works</h2>
+        <p>Morning Mindful blocks distracting apps during your configured morning window until you complete a journal entry. The blocking mechanism differs by platform:</p>
 
-        <h3>Accessibility Service</h3>
-        <p>Morning Mindful uses Android's Accessibility Service to detect when you open apps that you've chosen to block during your morning mindfulness period. This permission is used <strong>solely</strong> to redirect you to your journal when blocked apps are opened.</p>
+        <h3><span class="platform-badge">Android</span> Accessibility Service</h3>
+        <p>On Android, Morning Mindful uses the Accessibility Service to detect when you open apps that you've chosen to block during your morning mindfulness period. This permission is used <strong>solely</strong> to redirect you to your journal when blocked apps are opened.</p>
         <p><strong>We do not:</strong></p>
         <ul>
             <li>Read or collect any content from other apps</li>
@@ -150,119 +161,110 @@
             <li>Transmit any accessibility data off your device</li>
         </ul>
 
-        <h3>Usage Stats Access (Gentle Reminder Mode)</h3>
-        <p>If you choose Gentle Reminder mode, Morning Mindful requests access to Usage Stats. This permission allows the app to:</p>
-        <ul>
-            <li>Detect which app is currently in the foreground</li>
-            <li>Determine when you open a blocked app so we can show a reminder overlay</li>
-        </ul>
+        <h3><span class="platform-badge">Android</span> Usage Stats Access (Gentle Reminder Mode)</h3>
+        <p>If you choose Gentle Reminder mode on Android, Morning Mindful requests access to Usage Stats to detect which app is in the foreground and show a reminder overlay.</p>
         <p><strong>We do not:</strong></p>
         <ul>
             <li>Collect or store your app usage history</li>
             <li>Track how long you use other apps</li>
             <li>Transmit any usage data off your device</li>
         </ul>
-        <p>This permission is only used in real-time to detect blocked apps and is never logged or shared.</p>
 
-        <h3>Display Over Other Apps</h3>
-        <p>This permission allows the app to show the journal screen or reminder overlay when you attempt to open a blocked app.</p>
-
-        <h3>Notifications</h3>
-        <p>Used for two purposes:</p>
+        <h3><span class="platform-badge">iOS</span> Screen Time (FamilyControls &amp; ManagedSettings)</h3>
+        <p>On iOS, Morning Mindful uses Apple's Screen Time framework (FamilyControls, ManagedSettings, and DeviceActivity) to block apps you've selected during your morning window. A shield is displayed over blocked apps until you complete your journal entry.</p>
+        <p><strong>We do not:</strong></p>
         <ul>
-            <li>Showing a notification when app blocking is active, allowing you to track your remaining time</li>
-            <li>Sending optional daily reminder notifications at a time you choose to encourage your journaling habit</li>
+            <li>Access which specific apps you use or for how long</li>
+            <li>Collect or transmit any Screen Time data</li>
+            <li>Have access to your device usage beyond the blocking functionality</li>
+        </ul>
+        <p>All Screen Time data stays on your device and is managed entirely by Apple's framework.</p>
+
+        <h2>Other Permissions</h2>
+
+        <h3>Notifications <span class="platform-badge">Android</span> <span class="platform-badge">iOS</span></h3>
+        <p>Used for:</p>
+        <ul>
+            <li>Showing a notification when app blocking is active</li>
+            <li>Sending optional daily reminder notifications at a time you choose</li>
         </ul>
 
-        <h3>Boot Completed & Exact Alarms</h3>
-        <p>Used to restart the blocking service and reschedule daily reminders after your device reboots. Without this, blocking and reminders would stop working until you manually open the app.</p>
+        <h3>Camera &amp; Photo Library <span class="platform-badge">iOS</span></h3>
+        <p>Used only to attach photos to your journal entries. Photos are stored locally on your device and are never uploaded or shared.</p>
 
-        <h3>Foreground Service</h3>
-        <p>Used to keep the blocking monitor running reliably in the background during your configured morning window. This is what allows the app to detect blocked apps even when Morning Mindful is not in the foreground.</p>
+        <h3>Display Over Other Apps <span class="platform-badge">Android</span></h3>
+        <p>Allows the app to show the journal screen or reminder overlay when you attempt to open a blocked app.</p>
 
-        <h3>Advertising ID</h3>
-        <p>Used by Google AdMob to serve ads. You can opt out of personalized advertising in your device's Google settings, or reset your advertising ID at any time.</p>
+        <h3>Boot Completed &amp; Exact Alarms <span class="platform-badge">Android</span></h3>
+        <p>Used to restart the blocking service and reschedule daily reminders after your device reboots.</p>
+
+        <h3>Foreground Service <span class="platform-badge">Android</span></h3>
+        <p>Used to keep the blocking monitor running reliably in the background during your configured morning window.</p>
 
         <h2>Third-Party Services</h2>
 
-        <h3>Google AdMob</h3>
-        <p>Morning Mindful displays advertisements through Google AdMob. AdMob may collect certain information for ad personalization. Please refer to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for details on how Google handles data.</p>
-        <p>You can opt out of personalized advertising in your device's Google settings.</p>
+        <h3>Google AdMob <span class="platform-badge">Android</span></h3>
+        <p>The Android version of Morning Mindful displays advertisements through Google AdMob. AdMob may collect certain information for ad personalization. Please refer to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for details. You can opt out of personalized advertising in your device's Google settings.</p>
 
-        <h3>Firebase Analytics</h3>
-        <p>We use Firebase Analytics to understand how the app is used in aggregate (e.g., which features are popular, how often the app is opened). This service collects:</p>
+        <h3>Firebase Analytics <span class="platform-badge">Android</span></h3>
+        <p>The Android version uses Firebase Analytics to understand how the app is used in aggregate (e.g., which features are popular, how often the app is opened). This service collects:</p>
         <ul>
             <li>Anonymous usage events (e.g., "journal saved", "settings changed")</li>
             <li>Device information (model, OS version, screen size)</li>
             <li>App version and session duration</li>
         </ul>
-        <p>No personal data, journal content, or mood selections are included in analytics events. All events are anonymous and cannot be used to identify you.</p>
+        <p>No personal data, journal content, or mood selections are included in analytics events.</p>
 
-        <h3>Firebase Crashlytics</h3>
-        <p>We use Firebase Crashlytics to collect crash reports and improve app stability. This service collects:</p>
-        <ul>
-            <li>Device information (model, OS version)</li>
-            <li>Crash logs and stack traces</li>
-            <li>App state at the time of crash</li>
-        </ul>
-        <p>No personal data or journal content is included in crash reports.</p>
+        <h3>Firebase Crashlytics <span class="platform-badge">Android</span></h3>
+        <p>The Android version uses Firebase Crashlytics to collect crash reports and improve app stability. No personal data or journal content is included in crash reports.</p>
 
-        <h3>Firebase Performance Monitoring</h3>
-        <p>We use Firebase Performance Monitoring to track app performance and identify slow operations. This service collects:</p>
-        <ul>
-            <li>App startup time</li>
-            <li>Network request latency</li>
-            <li>Screen rendering performance</li>
-            <li>Device and OS information</li>
-        </ul>
-        <p>This data helps us optimize the app experience. No personal data or journal content is included in performance reports.</p>
+        <h3>Firebase Performance Monitoring <span class="platform-badge">Android</span></h3>
+        <p>The Android version uses Firebase Performance Monitoring to track app performance. No personal data or journal content is included in performance reports.</p>
+
+        <h3><span class="platform-badge">iOS</span> No Third-Party Analytics or Ads</h3>
+        <p>The iOS version of Morning Mindful does not include any third-party analytics, advertising, or tracking services. All data stays entirely on your device.</p>
 
         <h2>Data Security</h2>
-        <p>All locally stored data is encrypted using:</p>
+        <p>All locally stored data is encrypted using industry-standard encryption:</p>
         <ul>
-            <li>SQLCipher for database encryption (AES-256)</li>
-            <li>Android Keystore-backed EncryptedSharedPreferences for settings and encryption keys</li>
+            <li><span class="platform-badge">Android</span> SQLCipher for database encryption (AES-256) and Android Keystore-backed EncryptedSharedPreferences for settings and encryption keys</li>
+            <li><span class="platform-badge">iOS</span> SwiftData with iOS Data Protection (.completeFileProtection) and AES-256-GCM (CryptoKit) for backup encryption</li>
         </ul>
         <p>Your journal entries and settings are protected with industry-standard encryption and cannot be accessed by other apps or by us.</p>
 
         <h2>Data Backup</h2>
-        <p>Morning Mindful provides two backup options to protect your journals:</p>
 
-        <h3>Auto-Backup</h3>
+        <h3>Manual Export/Import <span class="platform-badge">Android</span> <span class="platform-badge">iOS</span></h3>
         <ul>
-            <li>Automatically saves your journals to a local folder you choose during setup</li>
-            <li>Backups are created automatically every time you save a journal entry</li>
-            <li>Encrypted with AES-256-GCM using a password you set</li>
-            <li>Backups remain on your device in your chosen folder - we never have access</li>
-            <li>You must remember your password to restore after reinstalling</li>
-        </ul>
-
-        <h3>Optional Google Drive Backup</h3>
-        <ul>
-            <li>You may optionally choose Google Drive as your backup destination</li>
-            <li>Your data is encrypted on your device <strong>before</strong> being uploaded - Google cannot read your journals</li>
-            <li>Backups are stored in a hidden, app-only folder in your Google Drive (appdata)</li>
-            <li>We only request the most limited Drive permission (appdata scope) and cannot access your other Drive files</li>
-            <li>You can sign out and switch back to local backup at any time</li>
-            <li>Uninstalling the app from your phone does not delete your Drive backup — it remains available if you reinstall. To delete it, go to Google Drive settings (Manage Apps → Morning Mindful → Delete hidden app data)</li>
-        </ul>
-
-        <h3>Manual Export/Import</h3>
-        <ul>
-            <li>Export all journals to an encrypted .mmbackup file anytime</li>
+            <li>Export all journals to an encrypted backup file anytime</li>
             <li>Backups are encrypted with AES-256-GCM using a password you choose</li>
             <li>We never see your backup password or data</li>
-            <li>Backups are stored wherever you choose (Google Drive, local storage, etc.)</li>
+        </ul>
+
+        <h3>Auto-Backup <span class="platform-badge">Android</span></h3>
+        <ul>
+            <li>Automatically saves your journals to a local folder you choose during setup</li>
+            <li>Encrypted with AES-256-GCM using a password you set</li>
+            <li>Backups remain on your device &mdash; we never have access</li>
+        </ul>
+
+        <h3>Optional Google Drive Backup <span class="platform-badge">Android</span></h3>
+        <ul>
+            <li>You may optionally choose Google Drive as your backup destination</li>
+            <li>Your data is encrypted on your device <strong>before</strong> being uploaded &mdash; Google cannot read your journals</li>
+            <li>Backups are stored in a hidden, app-only folder in your Google Drive (appdata)</li>
+            <li>You can sign out and switch back to local backup at any time</li>
+            <li>To delete Drive backup data: Google Drive settings &rarr; Manage Apps &rarr; Morning Mindful &rarr; Delete hidden app data</li>
         </ul>
 
         <h2>Data Retention</h2>
         <p>All data remains on your device until you:</p>
         <ul>
             <li>Uninstall the app</li>
-            <li>Clear the app's data through Android settings</li>
+            <li>Clear the app's data through your device settings</li>
             <li>Delete entries within the app</li>
         </ul>
-        <p>If you use Google Drive backup, encrypted backup data remains in your Drive until you remove it via Google Drive settings (Manage Apps → Morning Mindful → Delete hidden app data). We do not retain any of your data on servers we control.</p>
+        <p><span class="platform-badge">Android</span> If you use Google Drive backup, encrypted backup data remains in your Drive until you remove it via Google Drive settings. We do not retain any of your data on servers we control.</p>
 
         <h2>Children's Privacy</h2>
         <p>Morning Mindful is not directed at children under 13. We do not knowingly collect information from children under 13. If you believe we have inadvertently collected such information, please contact us to have it removed.</p>
@@ -274,21 +276,21 @@
         <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
         <p><strong>Email:</strong> <a href="mailto:alanwmurphy@gmail.com">alanwmurphy@gmail.com</a></p>
 
-        <h2>Your Rights (GDPR - European Users)</h2>
-        <p>If you are located in the European Economic Area (EEA), you have certain data protection rights. Your data is stored locally on your device (and optionally in your encrypted Google Drive backup). We do not have access to your journal content. You maintain full control over your data at all times. You have the right to:</p>
+        <h2>Your Rights (GDPR &mdash; European Users)</h2>
+        <p>If you are located in the European Economic Area (EEA), you have certain data protection rights. Your data is stored locally on your device. We do not have access to your journal content. You maintain full control over your data at all times. You have the right to:</p>
         <ul>
             <li><strong>Access:</strong> Your data is stored on your device and accessible through the app</li>
             <li><strong>Rectification:</strong> You can edit or delete your journal entries within the app</li>
-            <li><strong>Erasure:</strong> You can delete all data by uninstalling the app or clearing app data. If you use Google Drive backup, you can remove it via Google Drive settings (Manage Apps → Morning Mindful → Delete hidden app data)</li>
+            <li><strong>Erasure:</strong> You can delete all data by uninstalling the app or clearing app data</li>
             <li><strong>Data portability:</strong> Use the Export feature to download your data</li>
-            <li><strong>Withdraw consent:</strong> You can stop using the app at any time, disconnect Google Drive, and delete all data</li>
+            <li><strong>Withdraw consent:</strong> You can stop using the app at any time and delete all data</li>
         </ul>
 
-        <h2>Your Rights (CCPA - California Residents)</h2>
+        <h2>Your Rights (CCPA &mdash; California Residents)</h2>
         <p>If you are a California resident, the California Consumer Privacy Act (CCPA) provides you with specific rights regarding your personal information:</p>
         <ul>
-            <li><strong>Right to Know:</strong> You have the right to know what personal information we collect. As stated above, all data is stored locally on your device, with an optional encrypted Google Drive backup.</li>
-            <li><strong>Right to Delete:</strong> You can delete your data by uninstalling the app or clearing app data in Android settings. If you use Google Drive backup, you can remove it via Google Drive settings (Manage Apps → Morning Mindful → Delete hidden app data).</li>
+            <li><strong>Right to Know:</strong> You have the right to know what personal information we collect. As stated above, all data is stored locally on your device.</li>
+            <li><strong>Right to Delete:</strong> You can delete your data by uninstalling the app or clearing app data in your device settings.</li>
             <li><strong>Right to Non-Discrimination:</strong> We do not discriminate against you for exercising your CCPA rights.</li>
             <li><strong>Right to Opt-Out:</strong> We do not sell your personal information to third parties.</li>
         </ul>
