@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morning Mindful - Start Your Day with Intention</title>
-    <meta name="description" content="Break the doom-scrolling habit. Morning Mindful blocks distracting apps until you write a short journal entry.">
+    <title>Morning Mindful — Journal before you scroll</title>
+    <meta name="description" content="Blocks distracting apps until you write a short journal entry. Break the morning doom-scroll habit.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,776 +17,148 @@
         }
 
         :root {
-            --primary: #6B4EAE;
-            --primary-light: #8B6FCE;
-            --primary-dark: #5648C7;
-            --primary-bg: #F5F0FF;
-            --gentle: #38A169;
-            --gentle-bg: #F0FFF4;
-            --text: #1a1a2e;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --background: #FAFBFC;
+            --bg: #F5F2ED;
             --surface: #FFFFFF;
-            --accent: #FF6B35;
-            --accent-light: #FF8F66;
-            --gradient-start: #6B4EAE;
-            --gradient-end: #4F46E5;
-            --border: #e2e8f0;
+            --text: #1A1A18;
+            --text-mid: #5A5A55;
+            --text-light: #8C8C86;
+            --border: #D8D5CF;
+            --accent: #3A7D44;
+            --accent-bg: #EBF5EE;
+            --accent-text: #2A5E32;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
             color: var(--text);
-            background-color: var(--background);
-            overflow-x: hidden;
+            background-color: var(--bg);
         }
 
-        /* Animated Background */
-        .bg-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 50%, #7C3AED 100%);
-            z-index: -1;
+        a {
+            color: var(--accent-text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        .bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
-                              radial-gradient(circle at 40% 80%, rgba(255,255,255,0.06) 0%, transparent 30%);
-            z-index: -1;
+        a:hover {
+            color: var(--accent);
         }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            color: white;
-            padding: 80px 20px 120px;
-            text-align: center;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 700px;
+        /* Layout */
+        .container {
+            max-width: 660px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            padding: 0 24px;
         }
 
-        .logo-container {
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 50px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+        section {
+            padding: 64px 0;
+            border-top: 1px solid var(--border);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+        section:first-child {
+            border-top: none;
         }
 
-        .hero .tagline {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            font-weight: 400;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .version-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .version-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: #4ADE80;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: var(--primary);
-            padding: 16px 28px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-        }
-
-        .cta-button.secondary {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(255,255,255,0.25);
-        }
-
-        /* Floating Elements */
-        .floating-cards {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 16px;
-            padding: 16px;
-            border: 1px solid rgba(255,255,255,0.15);
-            font-size: 24px;
-        }
-
-        .floating-card:nth-child(1) { top: 15%; left: 8%; animation: float 6s ease-in-out infinite; }
-        .floating-card:nth-child(2) { top: 25%; right: 10%; animation: float 8s ease-in-out infinite 1s; }
-        .floating-card:nth-child(3) { bottom: 25%; left: 12%; animation: float 7s ease-in-out infinite 0.5s; }
-        .floating-card:nth-child(4) { bottom: 20%; right: 8%; animation: float 9s ease-in-out infinite 1.5s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(3deg); }
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            background: white;
-            padding: 32px 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stats-container {
-            max-width: 900px;
+        /* Nav */
+        nav {
+            padding: 20px 24px;
+            max-width: 660px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 16px;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 8px;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-label {
-            display: inline-block;
-            background: var(--primary-bg);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: 2.75rem;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: var(--surface);
-            padding: 32px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: var(--primary-light);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--primary-bg);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            color: var(--text);
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .feature-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 100px;
-            margin-left: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Blocking Modes Section */
-        .modes-section {
-            background: linear-gradient(180deg, var(--background) 0%, white 100%);
-            padding: 100px 20px;
-        }
-
-        .modes-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .modes-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .mode-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .mode-card.full-block {
-            border-color: var(--primary-bg);
-        }
-
-        .mode-card.full-block:hover {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(107, 78, 174, 0.15);
-        }
-
-        .mode-card.gentle {
-            border-color: var(--gentle-bg);
-        }
-
-        .mode-card.gentle:hover {
-            border-color: var(--gentle);
-            box-shadow: 0 20px 40px rgba(56, 161, 105, 0.15);
-        }
-
-        .mode-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .mode-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-
-        .mode-card.full-block .mode-icon {
-            background: var(--primary-bg);
-        }
-
-        .mode-card.gentle .mode-icon {
-            background: var(--gentle-bg);
-        }
-
-        .mode-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .mode-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .mode-description {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .mode-features {
-            list-style: none;
-        }
-
-        .mode-features li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 0;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .mode-features .check {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        .mode-card.full-block .check {
-            background: var(--primary-bg);
-            color: var(--primary);
-        }
-
-        .mode-card.gentle .check {
-            background: var(--gentle-bg);
-            color: var(--gentle);
-        }
-
-        /* Setup Section */
-        .setup-section {
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .setup-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .steps {
-            margin-top: 48px;
-        }
-
-        .step {
-            display: flex;
-            gap: 24px;
-            padding: 32px;
-            background: var(--background);
-            border-radius: 20px;
-            margin-bottom: 16px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .step:hover {
-            background: white;
-            border-color: var(--border);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            color: var(--text);
-            margin-bottom: 8px;
-            font-size: 1.15rem;
-            font-weight: 700;
-        }
-
-        .step-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* What's New Section */
-        .whats-new {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, var(--primary-bg) 0%, white 100%);
-        }
-
-        .whats-new-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .update-card {
-            background: white;
-            border-radius: 24px;
-            padding: 48px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 1px solid var(--border);
-        }
-
-        .update-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-            gap: 16px;
         }
 
-        .update-version {
+        .nav-brand {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
-        .update-version h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text);
-        }
-
-        .latest-badge {
-            background: linear-gradient(135deg, var(--gentle), #48BB78);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .update-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .update-list {
+        .nav-links {
+            display: flex;
+            gap: 24px;
             list-style: none;
         }
 
-        .update-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .update-list li:last-child {
-            border-bottom: none;
-        }
-
-        .update-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-bg);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .update-text strong {
-            color: var(--text);
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .update-text span {
-            color: var(--text-secondary);
+        .nav-links a {
             font-size: 0.9rem;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            padding: 28px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-item h3 {
-            color: var(--text);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-item h3::before {
-            content: '?';
-            width: 28px;
-            height: 28px;
-            background: var(--primary-bg);
-            color: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        .faq-item p {
-            color: var(--text-secondary);
-            padding-left: 40px;
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 60px 20px 40px;
-        }
-
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-        }
-
-        .footer-brand h4 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-brand p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .footer-links h5 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
-            color: #94a3b8;
-        }
-
-        .footer-links a {
-            display: block;
-            color: white;
+            color: var(--text-mid);
             text-decoration: none;
-            padding: 8px 0;
-            font-size: 0.95rem;
-            transition: color 0.2s;
         }
 
-        .footer-links a:hover {
-            color: var(--primary-light);
+        .nav-links a:hover {
+            color: var(--text);
         }
 
-        .footer-bottom {
-            max-width: 1000px;
-            margin: 48px auto 0;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: #64748b;
-            font-size: 0.9rem;
+        /* Hero */
+        .hero {
+            padding: 72px 0 56px;
+            border-top: none;
         }
 
-        /* Store Badges */
-        .store-badges {
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-mid);
+            margin-bottom: 36px;
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        .hero-badges {
             display: flex;
-            gap: 16px;
-            justify-content: center;
+            gap: 12px;
             align-items: center;
             flex-wrap: wrap;
+            margin-bottom: 48px;
         }
 
-        .store-badge {
-            height: 56px;
-            transition: all 0.3s ease;
-        }
-
-        .store-badge:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
+        .play-badge img {
+            height: 52px;
+            display: block;
         }
 
         .ios-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 12px 24px;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
+            gap: 8px;
+            background: var(--text);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            height: 56px;
+            text-decoration: none;
+            height: 52px;
+            white-space: nowrap;
+            border: none;
         }
 
         .ios-badge:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
+            background: #333;
+            color: #fff;
         }
 
         .ios-badge svg {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             fill: white;
+            flex-shrink: 0;
         }
 
         .ios-badge-text {
@@ -798,798 +170,633 @@
         .ios-badge-text .small {
             font-size: 0.65rem;
             font-weight: 400;
-            opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            opacity: 0.7;
+            letter-spacing: 0.04em;
         }
 
         .ios-badge-text .large {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
         }
 
-        /* iOS Waitlist Section */
-        .ios-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #1a1a2e 100%);
-            color: white;
-            text-align: center;
+        /* Personal note */
+        .personal-note {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            line-height: 1.75;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
         }
 
-        .ios-container {
-            max-width: 600px;
-            margin: 0 auto;
+        .personal-note p + p {
+            margin-top: 16px;
         }
 
-        .ios-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
+        /* Section titles */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        /* How it works */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-bg);
+            color: var(--accent-text);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .ios-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: white;
+        .step h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px 16px 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        .feature-item:nth-child(even) {
+            padding-left: 16px;
+            border-left: 1px solid var(--border);
+        }
+
+        .feature-item .icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Blocking modes */
+        .modes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .mode-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .mode-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .mode-card p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        .mode-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .mode-tag.hard {
+            background: #FEF3E2;
+            color: #8B4513;
+        }
+
+        .mode-tag.soft {
+            background: var(--accent-bg);
+            color: var(--accent-text);
+        }
+
+        /* Changelog */
+        .changelog {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .release {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .release:last-child {
+            border-bottom: none;
+        }
+
+        .release-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .release-version {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .release-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .release-latest {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: var(--accent-bg);
+            color: var(--accent-text);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .release-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .release-items li {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .release-items li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        /* iOS Waitlist */
+        .ios-section {
+            background: var(--text);
+            border-radius: 16px;
+            padding: 48px;
+            color: white;
+            text-align: center;
+            margin: 64px 0;
+            border-top: none;
         }
 
         .ios-section h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
+            color: white;
             margin-bottom: 12px;
-            letter-spacing: -0.02em;
         }
 
-        .ios-section .ios-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 32px;
+        .ios-section p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
             line-height: 1.6;
         }
 
         .waitlist-form {
             display: flex;
-            gap: 12px;
-            max-width: 460px;
-            margin: 0 auto 16px;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto 12px;
         }
 
         .waitlist-form input[type="email"] {
             flex: 1;
-            padding: 14px 20px;
-            border-radius: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.2);
             background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
             outline: none;
-            transition: border-color 0.2s;
         }
 
         .waitlist-form input[type="email"]::placeholder {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
         }
 
         .waitlist-form input[type="email"]:focus {
-            border-color: var(--primary-light);
+            border-color: rgba(255,255,255,0.4);
         }
 
         .waitlist-form button {
-            padding: 14px 28px;
+            padding: 12px 20px;
             background: white;
-            color: var(--primary-dark);
+            color: var(--text);
             border: none;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 700;
             font-family: inherit;
             cursor: pointer;
-            transition: all 0.3s ease;
             white-space: nowrap;
+            transition: background 0.2s;
         }
 
         .waitlist-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+            background: #eee;
         }
 
         .waitlist-note {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
         }
 
         .waitlist-success {
             display: none;
-            padding: 16px 24px;
-            background: rgba(74, 222, 128, 0.15);
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            border-radius: 12px;
-            color: #4ADE80;
+            color: #86EFAC;
             font-weight: 600;
-            max-width: 460px;
-            margin: 0 auto;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 500px) {
-            .waitlist-form {
-                flex-direction: column;
-            }
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .features-grid {
+        @media (max-width: 560px) {
+            .features-list {
                 grid-template-columns: 1fr;
             }
 
-            .modes-grid {
+            .feature-item:nth-child(even) {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .modes {
                 grid-template-columns: 1fr;
             }
 
-            .cta-buttons {
+            .ios-section {
+                padding: 32px 24px;
+            }
+
+            .waitlist-form {
                 flex-direction: column;
-                align-items: center;
             }
 
-            .floating-card {
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 16px;
+            }
+
+            .nav-links {
                 display: none;
-            }
-
-            .step {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .step-number {
-                margin: 0 auto;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+
+    <nav>
+        <a href="/" class="nav-brand">🌅 Morning Mindful</a>
+        <ul class="nav-links">
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#ios-waitlist">iOS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
     <section class="hero">
-        <div class="bg-gradient"></div>
-        <div class="bg-pattern"></div>
-        <div class="floating-cards">
-            <div class="floating-card">📝</div>
-            <div class="floating-card">🧘</div>
-            <div class="floating-card">☀️</div>
-            <div class="floating-card">✨</div>
-        </div>
-        <div class="hero-content">
-            <div class="logo-container">🌅</div>
-            <h1>Morning Mindful</h1>
-            <div class="version-badge">
-                <span class="dot"></span>
-                Version 1.0.47 - Now available on Google Play
-            </div>
-            <p class="tagline">Break the doom-scrolling habit. Start your mornings with intention by journaling before social media.</p>
-            <div class="store-badges">
-                <a href="https://play.google.com/store/apps/details?id=com.morningmindful" target="_blank" rel="noopener">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge">
+        <div class="container">
+            <h1>Journal before<br>you scroll.</h1>
+            <p class="tagline">Morning Mindful blocks social apps until you write a short journal entry. Build a mindful morning routine, one day at a time.</p>
+            <div class="hero-badges">
+                <a href="https://play.google.com/store/apps/details?id=com.morningmindful" class="play-badge" target="_blank" rel="noopener">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
                 <a href="#ios-waitlist" class="ios-badge">
                     <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                     <span class="ios-badge-text">
-                        <span class="small">Coming Soon on</span>
+                        <span class="small">Coming soon on</span>
                         <span class="large">iOS</span>
                     </span>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-value">2</div>
-                <div class="stat-label">Blocking Modes</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Languages</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">256</div>
-                <div class="stat-label">Bit Encryption</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">100%</div>
-                <div class="stat-label">Private & Local</div>
+            <div class="personal-note">
+                <p>I was spending the first hour of every morning on my phone before I'd even said good morning to my family. Social media, news, sports scores — it was all muscle memory by the time I was fully awake.</p>
+                <p>This app is what I built to fix that. Every morning, your chosen apps are blocked until you write a short journal entry. Write your words, unlock your day.</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-header">
-            <div class="section-label">Features</div>
-            <h2 class="section-title">Everything you need to start mindfully</h2>
-            <p class="section-subtitle">Simple tools that help you build a healthier morning routine without the complexity.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚫</div>
-                <h3>Smart App Blocking</h3>
-                <p>Block social media, messaging, and entertainment apps during morning hours. Two modes: Full Block or Gentle Reminder.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✍️</div>
-                <h3>Write to Unlock</h3>
-                <p>Complete a short journal entry to unlock your apps. Set your own word count goal from 50 to 500 words.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3>Photo Journal <span class="feature-badge">New</span></h3>
-                <p>Add photos to entries and see them in a beautiful timeline view. Full-screen image viewer with timestamps.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔥</div>
-                <h3>Streak Tracking</h3>
-                <p>Track your journaling streak, total entries, and lifetime word count. Build consistency one morning at a time.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔔</div>
-                <h3>Daily Reminders</h3>
-                <p>Get a gentle notification at your preferred time. Never forget to journal, even on lazy mornings.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Search & History</h3>
-                <p>Search through all your past entries. Review your journey with a scrollable history and detailed entry view.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Bank-Level Encryption</h3>
-                <p>AES-256 encrypted database and backups. All data stays on your device. We never see your entries.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💾</div>
-                <h3>Auto-Backup <span class="feature-badge">Smart</span></h3>
-                <p>Automatic encrypted backups to a local folder or Google Drive. Reinstalling? We detect existing backups and offer instant restore.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>Material You</h3>
-                <p>Dynamic colors from your wallpaper on Android 12+. System, light, and dark themes. Supports English, German, and Chinese.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blocking Modes Section -->
-    <section class="modes-section">
-        <div class="modes-container">
-            <div class="section-header">
-                <div class="section-label">Blocking Modes</div>
-                <h2 class="section-title">Choose your style</h2>
-                <p class="section-subtitle">Two different approaches to match your willpower and preferences.</p>
-            </div>
-            <div class="modes-grid">
-                <div class="mode-card full-block">
-                    <div class="mode-header">
-                        <div class="mode-icon">🛡️</div>
-                        <div>
-                            <div class="mode-title">Full Block</div>
-                            <div class="mode-subtitle">For maximum focus</div>
-                        </div>
-                    </div>
-                    <p class="mode-description">Instantly redirects you to journal when you try to open a blocked app. No escape until you write.</p>
-                    <ul class="mode-features">
-                        <li><span class="check">✓</span> Immediate redirect to journal</li>
-                        <li><span class="check">✓</span> No dismiss option</li>
-                        <li><span class="check">✓</span> Uses Accessibility Service</li>
-                        <li><span class="check">✓</span> Best for building habits</li>
-                    </ul>
-                </div>
-                <div class="mode-card gentle">
-                    <div class="mode-header">
-                        <div class="mode-icon">🌿</div>
-                        <div>
-                            <div class="mode-title">Gentle Reminder</div>
-                            <div class="mode-subtitle">For mindful nudges</div>
-                        </div>
-                    </div>
-                    <p class="mode-description">Shows a friendly overlay reminder. You can choose to continue to the app or go write instead.</p>
-                    <ul class="mode-features">
-                        <li><span class="check">✓</span> Dismissible overlay</li>
-                        <li><span class="check">✓</span> Your choice to continue</li>
-                        <li><span class="check">✓</span> Uses Usage Access only</li>
-                        <li><span class="check">✓</span> Great for awareness</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Setup Section -->
-    <section class="setup-section">
-        <div class="setup-container">
-            <div class="section-header">
-                <div class="section-label">Getting Started</div>
-                <h2 class="section-title">Up and running in minutes</h2>
-                <p class="section-subtitle">A simple setup flow gets you journaling by tomorrow morning.</p>
-            </div>
+    <!-- How it works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How it works</h2>
             <div class="steps">
                 <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Download & Install</h3>
-                        <p>Get Morning Mindful from the Google Play Store and open it to begin setup.</p>
+                    <div class="step-num">1</div>
+                    <div>
+                        <h3>Set your morning window</h3>
+                        <p>Pick the hours when blocking is active — say, 5 AM to 10 AM. Outside those hours, everything works normally.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Configure Your Preferences</h3>
-                        <p>Choose your blocking duration, word count goal, morning hours, and blocking mode.</p>
+                    <div class="step-num">2</div>
+                    <div>
+                        <h3>Pick apps to block</h3>
+                        <p>Choose which apps to block during your window. Social media, news, games — whatever pulls you in first thing.</p>
                     </div>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Grant Permissions</h3>
-                        <p>Enable Accessibility (Full Block) or Usage Access (Gentle) - only used to detect blocked apps.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Set Up Backup</h3>
-                        <p>Choose a folder and password for encrypted auto-backups. Restores instantly on reinstall.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Wake Up Mindfully</h3>
-                        <p>Tomorrow morning, blocked apps will prompt you to journal first. Write, reflect, unlock!</p>
+                    <div class="step-num">3</div>
+                    <div>
+                        <h3>Write to unlock</h3>
+                        <p>Open a blocked app and you're redirected to journal. Hit your word count goal (you choose, 50–1,000 words) and everything unlocks for the rest of the day.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What's New Section -->
-    <section class="whats-new">
-        <div class="whats-new-container">
-            <div class="section-header">
-                <div class="section-label">Changelog</div>
-                <h2 class="section-title">What's New</h2>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.47</h3>
-                        <span class="latest-badge">Latest</span>
-                    </div>
-                    <span class="update-date">March 2026</span>
+    <!-- Blocking modes -->
+    <section>
+        <div class="container">
+            <h2>Two blocking modes</h2>
+            <div class="modes">
+                <div class="mode-card">
+                    <div class="mode-tag hard">Full Block</div>
+                    <h3>No way around it</h3>
+                    <p>Opens the journal directly when you tap a blocked app. There's no dismiss button — write your entry to get through. Uses Android's Accessibility Service.</p>
                 </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🛡️</div>
-                        <div class="update-text">
-                            <strong>Smarter Blocking</strong>
-                            <span>Fixed an issue where using your phone in the night could prevent blocking from activating in the morning.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🌐</div>
-                        <div class="update-text">
-                            <strong>In-App Language Picker</strong>
-                            <span>Switch between English, Deutsch, and 中文(简体) right from Settings — no need to change your device language.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🔍</div>
-                        <div class="update-text">
-                            <strong>Better Crash Diagnostics</strong>
-                            <span>Added Sentry crash reporting for faster bug fixes and improved stability.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.44</h3>
-                    </div>
-                    <span class="update-date">March 2026</span>
+                <div class="mode-card">
+                    <div class="mode-tag soft">Gentle Reminder</div>
+                    <h3>Your choice</h3>
+                    <p>Shows an overlay reminder when you open a blocked app. You can write now or dismiss and continue. Uses Usage Access only — no Accessibility Service needed.</p>
                 </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🛡️</div>
-                        <div class="update-text">
-                            <strong>Blocking Reliability Fix</strong>
-                            <span>Fixed blocking not activating after app updates. Timer now persists across restarts.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🐛</div>
-                        <div class="update-text">
-                            <strong>Crash Fixes</strong>
-                            <span>Fixed crashes on History and Onboarding screens affecting some devices.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.43</h3>
-                    </div>
-                    <span class="update-date">March 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">💬</div>
-                        <div class="update-text">
-                            <strong>Clearer Restore Dialog</strong>
-                            <span>Reworded Google Drive restore popup so new users without backups aren't confused.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.42</h3>
-                    </div>
-                    <span class="update-date">March 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🎛️</div>
-                        <div class="update-text">
-                            <strong>Blocking Style Redesign</strong>
-                            <span>New card-based picker for Full Block vs Gentle Reminder with clear descriptions and duration slider.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🌙</div>
-                        <div class="update-text">
-                            <strong>Onboarding Dark Theme</strong>
-                            <span>Consistent dark gradient throughout all onboarding pages with frosted glass UI elements.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🔧</div>
-                        <div class="update-text">
-                            <strong>Permissions Fix</strong>
-                            <span>Permission counter now correctly shows all 5 permissions matching the permissions sheet.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.41</h3>
-                    </div>
-                    <span class="update-date">March 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🎨</div>
-                        <div class="update-text">
-                            <strong>Visual Consistency Pass</strong>
-                            <span>Unified card styles, typography, and spacing across every screen for a cleaner, more polished look.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">📊</div>
-                        <div class="update-text">
-                            <strong>Mood Trend &amp; Filters</strong>
-                            <span>See your mood at a glance with a weekly trend chart in History, plus filter entries by mood.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">✨</div>
-                        <div class="update-text">
-                            <strong>Journal Polish</strong>
-                            <span>Borderless writing area, goal celebration animation, relative dates, and mood-colored entry cards.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.38</h3>
-                    </div>
-                    <span class="update-date">March 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">☁️</div>
-                        <div class="update-text">
-                            <strong>Google Drive Backup</strong>
-                            <span>Optional encrypted backup to Google Drive. Connect your account in Settings — your data stays private in an app-only folder.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">💚</div>
-                        <div class="update-text">
-                            <strong>Backup Health Dashboard</strong>
-                            <span>Green, yellow, or red indicator shows your backup status at a glance. Manual "Backup Now" button and automatic retry every 6 hours.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🛡️</div>
-                        <div class="update-text">
-                            <strong>Security & Reliability</strong>
-                            <span>Improved blocking accuracy on Android 12+, fixed CVEs in dependencies, and 10 new persistence tests.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.30</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🔧</div>
-                        <div class="update-text">
-                            <strong>Auto-Backup Fix</strong>
-                            <span>Fixed auto-backup setup in Settings looping instead of saving correctly.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">📁</div>
-                        <div class="update-text">
-                            <strong>Detect Existing Backups</strong>
-                            <span>Settings now detects existing backup files when choosing a folder, so you can reuse them.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.29</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🚀</div>
-                        <div class="update-text">
-                            <strong>Production Release</strong>
-                            <span>Morning Mindful is now fully live on Google Play for everyone.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.27</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">📓</div>
-                        <div class="update-text">
-                            <strong>Stale Journal Fix</strong>
-                            <span>Fixed issue where journal showed yesterday's entry when opened the next morning.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🚀</div>
-                        <div class="update-text">
-                            <strong>Production Release</strong>
-                            <span>Morning Mindful is now available to everyone on Google Play!</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.26</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">⏱️</div>
-                        <div class="update-text">
-                            <strong>Live Timer Updates</strong>
-                            <span>Change blocking duration mid-session and it takes effect immediately.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🛡️</div>
-                        <div class="update-text">
-                            <strong>Improved Blocking Reliability</strong>
-                            <span>Fixed issues where blocking wouldn't trigger on some devices.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🐛</div>
-                        <div class="update-text">
-                            <strong>Timer Expiry Fix</strong>
-                            <span>Blocking now correctly stops when the timer expires.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.22</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">📺</div>
-                        <div class="update-text">
-                            <strong>Fixed Ad Display</strong>
-                            <span>Resolved issue where banner ads were not appearing correctly.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">📋</div>
-                        <div class="update-text">
-                            <strong>Privacy Policy Updates</strong>
-                            <span>Expanded details on Usage Stats permission for better transparency.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="update-card">
-                <div class="update-header">
-                    <div class="update-version">
-                        <h3>Version 1.0.21</h3>
-                    </div>
-                    <span class="update-date">February 2026</span>
-                </div>
-                <ul class="update-list">
-                    <li>
-                        <div class="update-icon">🔍</div>
-                        <div class="update-text">
-                            <strong>Search Journal History</strong>
-                            <span>Quickly find past entries with the new search feature in your journal history.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🔔</div>
-                        <div class="update-text">
-                            <strong>Daily Reminders</strong>
-                            <span>Set customizable notification reminders to keep your journaling habit on track.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">📊</div>
-                        <div class="update-text">
-                            <strong>Performance Monitoring</strong>
-                            <span>Firebase Performance integration helps us identify and fix slow operations.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🛡️</div>
-                        <div class="update-text">
-                            <strong>Crash Reporting</strong>
-                            <span>Firebase Crashlytics helps us quickly identify and fix crashes you might encounter.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="update-icon">🐛</div>
-                        <div class="update-text">
-                            <strong>Bug Fixes</strong>
-                            <span>Various stability improvements and bug fixes for a smoother experience.</span>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="faq-container">
-            <div class="section-header">
-                <div class="section-label">FAQ</div>
-                <h2 class="section-title">Common Questions</h2>
-            </div>
-
-            <div class="faq-item">
-                <h3>Why does it need Accessibility permissions?</h3>
-                <p>The Accessibility Service detects when you open a blocked app and redirects you. It does NOT read content from other apps - it only sees which app is in the foreground.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Is my journal data private?</h3>
-                <p>Yes! All entries are encrypted with AES-256 and stored only on your device. We never see, collect, or transmit your journals. Your data belongs to you.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>What if I uninstall the app?</h3>
-                <p>If you have auto-backup enabled, your journals are safe in your chosen folder or Google Drive. After reinstalling, select the same backup source and we'll detect the backup and offer to restore it.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Why isn't blocking working?</h3>
-                <p>Make sure you've granted the required permissions. On some phones, also disable battery optimization for Morning Mindful in Settings → Apps → Morning Mindful → Battery.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>What languages are supported?</h3>
-                <p>English, German, and Chinese (Simplified). The app uses your phone's language setting. Chinese characters are properly counted (1 character = 1 word).</p>
+    <!-- Features -->
+    <section>
+        <div class="container">
+            <h2>Everything included</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="icon">✍️</span>
+                    <span>Word count goal, auto-save, CJK character support</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">📸</span>
+                    <span>Photo attachments with pinch-to-zoom and timeline view</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔥</span>
+                    <span>Streak tracking, mood tags, word count stats</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔍</span>
+                    <span>Search and filter your full journal history</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <span>AES-256 encrypted database — stays on your device</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">☁️</span>
+                    <span>Encrypted auto-backup to local folder or Google Drive</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔔</span>
+                    <span>Daily reminder notification at a time you set</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🎨</span>
+                    <span>Material You dynamic colors, dark mode, 4 languages</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- iOS Waitlist Section -->
-    <section class="ios-section" id="ios-waitlist">
-        <div class="ios-container">
-            <div class="ios-icon">
-                <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <!-- Changelog -->
+    <section>
+        <div class="container">
+            <h2>What's new</h2>
+            <div class="changelog">
+
+                <div class="release">
+                    <div class="release-header">
+                        <span class="release-version">v1.0.48</span>
+                        <span class="release-latest">Latest</span>
+                        <span class="release-date">March 2026</span>
+                    </div>
+                    <ul class="release-items">
+                        <li>Camera button in journal — take photos without leaving the app</li>
+                        <li>Personalised onboarding with screen time stats and goal setting</li>
+                        <li>Vietnamese language support</li>
+                        <li>Word count goal raised to 1,000 words</li>
+                        <li>Pinch-to-zoom in the full-screen image viewer</li>
+                        <li>Swipe left to delete journal entries with undo</li>
+                        <li>Safer auto-backup — writes to a temp file first, then replaces</li>
+                    </ul>
+                </div>
+
+                <div class="release">
+                    <div class="release-header">
+                        <span class="release-version">v1.0.44</span>
+                        <span class="release-date">March 2026</span>
+                    </div>
+                    <ul class="release-items">
+                        <li>Fixed blocking not activating after app updates</li>
+                        <li>Fixed crashes on History and Onboarding screens</li>
+                    </ul>
+                </div>
+
+                <div class="release">
+                    <div class="release-header">
+                        <span class="release-version">v1.0.38</span>
+                        <span class="release-date">March 2026</span>
+                    </div>
+                    <ul class="release-items">
+                        <li>Google Drive backup — optional encrypted copy in an app-only folder</li>
+                        <li>Backup health indicator (green / yellow / red) with manual backup button</li>
+                        <li>Mood trend chart and entry filters in History</li>
+                    </ul>
+                </div>
+
             </div>
-            <h2>Coming Soon to iOS</h2>
-            <p class="ios-subtitle">Morning Mindful is heading to the App Store. Join the waitlist to be first to know when it launches.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <h3>Why does it need Accessibility permissions?</h3>
+                    <p>In Full Block mode, the Accessibility Service detects when you open a blocked app and redirects you to the journal. It only reads which app is in the foreground — nothing else. Gentle Reminder mode doesn't need it.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is my journal data private?</h3>
+                    <p>Yes. Every entry is encrypted with AES-256 and stored only on your device. No account is required. I never see your data — it never leaves your phone unless you opt into Google Drive backup, which is also encrypted with a password only you know.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What happens if I uninstall the app?</h3>
+                    <p>If you've set up auto-backup, your journals are safe. After reinstalling, point the app at your backup folder or Google Drive and it'll detect the backup and offer to restore it.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Why isn't blocking working?</h3>
+                    <p>Most common fix: go to Settings → Apps → Morning Mindful → Battery and disable battery optimization. Some phones aggressively kill background services. Also make sure the required permissions are still granted.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What languages are supported?</h3>
+                    <p>English, German, Chinese (Simplified), and Vietnamese. You can switch language in the app without changing your device language. CJK characters count as one word each.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- iOS Waitlist -->
+    <div class="container">
+        <section class="ios-section" id="ios-waitlist">
+            <h2>iOS is coming</h2>
+            <p>Morning Mindful is in development for iPhone. Join the waitlist and I'll email you when it's ready.</p>
             <form class="waitlist-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
                 <input type="email" placeholder="your@email.com" required aria-label="Email address">
-                <button type="submit">Join Waitlist</button>
+                <button type="submit">Join waitlist</button>
             </form>
-            <div class="waitlist-success" id="waitlist-success">You're on the list! We'll email you when the iOS version is ready.</div>
-            <p class="waitlist-note" id="waitlist-note">No spam, just a single notification when we launch.</p>
-        </div>
-    </section>
+            <div class="waitlist-success" id="waitlist-success">You're on the list. I'll be in touch.</div>
+            <p class="waitlist-note" id="waitlist-note">One email when we launch. No spam.</p>
+        </section>
+    </div>
 
     <script>
-    // Google Forms configuration
     var GOOGLE_FORM_ID = '1FAIpQLSc3QJCLRtu2kbS4OL8pDZ4wro-_v9I49kaF9VXsbq7-IeAUSw';
     var GOOGLE_ENTRY_ID = '2109692921';
 
@@ -1600,43 +807,31 @@
         var formData = new FormData();
         formData.append('entry.' + GOOGLE_ENTRY_ID, email);
 
-        fetch(url, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-        }).then(function() {
+        fetch(url, { method: 'POST', mode: 'no-cors', body: formData })
+            .then(function() { showSuccess(); })
+            .catch(function() { showSuccess(); });
+
+        function showSuccess() {
             document.getElementById('waitlist-form').style.display = 'none';
             document.getElementById('waitlist-note').style.display = 'none';
             document.getElementById('waitlist-success').style.display = 'block';
-        }).catch(function() {
-            document.getElementById('waitlist-form').style.display = 'none';
-            document.getElementById('waitlist-note').style.display = 'none';
-            document.getElementById('waitlist-success').style.display = 'block';
-        });
+        }
     }
     </script>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h4>🌅 Morning Mindful</h4>
-                <p>Building healthier morning habits through mindful journaling. Start your day with intention, not distraction.</p>
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-left">© 2026 Morning Mindful</span>
+                <ul class="footer-links">
+                    <li><a href="https://play.google.com/store/apps/details?id=com.morningmindful" target="_blank" rel="noopener">Google Play</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="mailto:alanwmurphy@gmail.com">Contact</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <h5>Links</h5>
-                <a href="https://play.google.com/store/apps/details?id=com.morningmindful">Google Play</a>
-                <a href="#ios-waitlist">iOS Waitlist</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-            <div class="footer-links">
-                <h5>Contact</h5>
-                <a href="mailto:alanwmurphy@gmail.com">Email Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Morning Mindful. Made with 🧘 for mindful mornings.</p>
         </div>
     </footer>
+
 </body>
 </html>
