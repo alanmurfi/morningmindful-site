@@ -589,7 +589,7 @@
         <ul class="nav-links">
             <li><a href="#how-it-works">How it works</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#ios-waitlist">iOS</a></li>
+            <li><a href="https://apps.apple.com/app/morning-mindful/id6760952162" target="_blank">App Store</a></li>
         </ul>
     </nav>
 
@@ -606,11 +606,11 @@
                         <span class="large">Google Play</span>
                     </span>
                 </a>
-                <a href="#ios-waitlist" class="store-btn ios">
+                <a href="https://apps.apple.com/app/morning-mindful/id6760952162" class="store-btn ios" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/apple/ffffff" alt="" aria-hidden="true">
                     <span class="store-btn-text">
-                        <span class="small">Coming soon on</span>
-                        <span class="large">iOS</span>
+                        <span class="small">Download on the</span>
+                        <span class="large">App Store</span>
                     </span>
                 </a>
             </div>
@@ -659,12 +659,12 @@
                 <div class="mode-card">
                     <div class="mode-tag hard">Full Block</div>
                     <h3>No way around it</h3>
-                    <p>Opens the journal directly when you tap a blocked app. There's no dismiss button — write your entry to get through. Uses Android's Accessibility Service.</p>
+                    <p>On Android, opens the journal directly when you tap a blocked app. On iOS, a Screen Time shield covers blocked apps until you journal. No way around it — write your entry to get through.</p>
                 </div>
                 <div class="mode-card">
                     <div class="mode-tag soft">Gentle Reminder</div>
                     <h3>Your choice</h3>
-                    <p>Shows an overlay reminder when you open a blocked app. You can write now or dismiss and continue. Uses Usage Access only — no Accessibility Service needed.</p>
+                    <p>Shows a reminder when you open a blocked app. On Android, a dismissible overlay appears. On iOS, you get notifications every 15 minutes during your morning window. You can write now or continue — your call.</p>
                 </div>
             </div>
         </div>
@@ -705,7 +705,7 @@
                 </div>
                 <div class="feature-item">
                     <span class="icon">🎨</span>
-                    <span>Material You dynamic colors, dark mode, 4 languages</span>
+                    <span>Dark mode, 4 languages (EN, DE, ZH, VI)</span>
                 </div>
             </div>
         </div>
@@ -809,42 +809,29 @@
         </div>
     </section>
 
-    <!-- iOS Waitlist -->
+    <!-- Download CTA -->
     <div class="container">
-        <section class="ios-section" id="ios-waitlist">
-            <h2>iOS is coming</h2>
-            <p>Morning Mindful is in development for iPhone. Join the waitlist and I'll email you when it's ready.</p>
-            <form class="waitlist-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
-                <input type="email" placeholder="your@email.com" required aria-label="Email address">
-                <button type="submit">Join waitlist</button>
-            </form>
-            <div class="waitlist-success" id="waitlist-success">You're on the list. I'll be in touch.</div>
-            <p class="waitlist-note" id="waitlist-note">One email when we launch. No spam.</p>
+        <section class="ios-section" id="download">
+            <h2>Available on Android & iOS</h2>
+            <p>Free. No account required. Your data stays on your device.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://play.google.com/store/apps/details?id=com.morningmindful" class="store-btn android" target="_blank" rel="noopener">
+                    <img src="https://cdn.simpleicons.org/googleplay/ffffff" alt="" aria-hidden="true">
+                    <span class="store-btn-text">
+                        <span class="small">Get it on</span>
+                        <span class="large">Google Play</span>
+                    </span>
+                </a>
+                <a href="https://apps.apple.com/app/morning-mindful/id6760952162" class="store-btn ios" target="_blank" rel="noopener">
+                    <img src="https://cdn.simpleicons.org/apple/ffffff" alt="" aria-hidden="true">
+                    <span class="store-btn-text">
+                        <span class="small">Download on the</span>
+                        <span class="large">App Store</span>
+                    </span>
+                </a>
+            </div>
         </section>
     </div>
-
-    <script>
-    var GOOGLE_FORM_ID = '1FAIpQLSc3QJCLRtu2kbS4OL8pDZ4wro-_v9I49kaF9VXsbq7-IeAUSw';
-    var GOOGLE_ENTRY_ID = '2109692921';
-
-    function handleWaitlist(e) {
-        e.preventDefault();
-        var email = e.target.querySelector('input[type="email"]').value;
-        var url = 'https://docs.google.com/forms/d/e/' + GOOGLE_FORM_ID + '/formResponse';
-        var formData = new FormData();
-        formData.append('entry.' + GOOGLE_ENTRY_ID, email);
-
-        fetch(url, { method: 'POST', mode: 'no-cors', body: formData })
-            .then(function() { showSuccess(); })
-            .catch(function() { showSuccess(); });
-
-        function showSuccess() {
-            document.getElementById('waitlist-form').style.display = 'none';
-            document.getElementById('waitlist-note').style.display = 'none';
-            document.getElementById('waitlist-success').style.display = 'block';
-        }
-    }
-    </script>
 
     <!-- Footer -->
     <footer>
@@ -853,6 +840,7 @@
                 <span class="footer-left">© 2026 Morning Mindful</span>
                 <ul class="footer-links">
                     <li><a href="https://play.google.com/store/apps/details?id=com.morningmindful" target="_blank" rel="noopener">Google Play</a></li>
+                    <li><a href="https://apps.apple.com/app/morning-mindful/id6760952162" target="_blank" rel="noopener">App Store</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="mailto:alanwmurphy@gmail.com">Contact</a></li>
                 </ul>
